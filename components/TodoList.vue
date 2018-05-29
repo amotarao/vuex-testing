@@ -92,6 +92,12 @@ export default {
       this.$store.commit('todos/removeCompleted')
     }
   },
-
+  directives: {
+    todoFocus (el, binding) {
+      if (binding.value) {
+        el.focus()
+      }
+    }
+  }
 }
 </script>
