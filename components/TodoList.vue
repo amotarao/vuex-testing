@@ -41,6 +41,14 @@ export default {
       return this.$store.state.todos.todos
     }
   },
+  watch: {
+    todos: {
+      handler: function (todos) {
+        this.$store.commit('todos/saveStorage')
+      },
+      deep: true
+    }
+  },
   methods: {
     addTodo: function () {
       var value = this.newTodo && this.newTodo.trim()

@@ -38,6 +38,9 @@ export const mutations = {
   remove (state, todo) {
     state.todos.splice(state.todos.indexOf(todo), 1)
   },
+  saveStorage (state, todos) {
+    todoStorage.save(state.todos)
+  },
   removeCompleted (state) {
     state.todos = filters.active(state.todos)
   }
