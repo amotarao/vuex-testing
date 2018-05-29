@@ -33,6 +33,7 @@ export const state = () => ({
 
 export const mutations = {
   add (state, todo) {
+    todo['id'] = todoStorage.uid++
     state.todos.push(todo)
   },
   remove (state, todo) {

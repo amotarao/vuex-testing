@@ -56,7 +56,6 @@ export default {
         return
       }
       this.$store.commit('todos/add', {
-        // id: todoStorage.uid++,
         title: value,
         completed: false
       })
