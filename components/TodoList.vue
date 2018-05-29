@@ -43,15 +43,15 @@ export default {
   },
   watch: {
     todos: {
-      handler: function (todos) {
+      handler (todos) {
         this.$store.commit('todos/saveStorage')
       },
       deep: true
     }
   },
   methods: {
-    addTodo: function () {
-      var value = this.newTodo && this.newTodo.trim()
+    addTodo () {
+      const value = this.newTodo && this.newTodo.trim()
       if (!value) {
         return
       }
@@ -61,17 +61,14 @@ export default {
       })
       this.newTodo = ''
     },
-
-    removeTodo: function (todo) {
+    removeTodo (todo) {
       this.$store.commit('todos/remove', todo)
     },
-
-    editTodo: function (todo) {
+    editTodo (todo) {
       this.beforeEditCache = todo.title
       this.editedTodo = todo
     },
-
-    doneEdit: function (todo) {
+    doneEdit (todo) {
       if (!this.editedTodo) {
         return
       }
@@ -81,13 +78,11 @@ export default {
         this.removeTodo(todo)
       }
     },
-
-    cancelEdit: function (todo) {
+    cancelEdit (todo) {
       this.editedTodo = null
       todo.title = this.beforeEditCache
     },
-
-    removeCompleted: function () {
+    removeCompleted () {
       this.$store.commit('todos/removeCompleted')
     }
   },
