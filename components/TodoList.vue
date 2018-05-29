@@ -8,9 +8,9 @@
         @keyup.enter="addTodo">
     </p>
     <ul>
-      <li v-for="(todo, i) in todos"
+      <li v-for="todo in todos"
         class="todo"
-        :key="i">
+        :key="todo.id">
         <div class="view">
           <input class="toggle" type="checkbox" v-model="todo.completed">
           <label @dblclick="editTodo(todo)">{{ todo.title }}</label>
