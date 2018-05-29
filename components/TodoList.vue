@@ -43,7 +43,7 @@ export default {
   },
   watch: {
     todos: {
-      handler (todos) {
+      handler () {
         this.$store.commit('todos/saveStorage')
       },
       deep: true
