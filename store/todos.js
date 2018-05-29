@@ -1,4 +1,3 @@
-/*
 // localStorage persistence
 const STORAGE_KEY = 'todos-vuejs-2.0'
 const todoStorage = {
@@ -27,11 +26,9 @@ const filters = {
     return todos.filter( todo => todo.completed )
   }
 }
-*/
 
 export const state = () => ({
-  // todos: todoStorage.fetch()
-  todos: []
+  todos: todoStorage.fetch()
 })
 
 export const mutations = {
